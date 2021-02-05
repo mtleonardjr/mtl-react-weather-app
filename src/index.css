@@ -8,26 +8,77 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: rgb(7, 23, 31);
 }
 
 .container {
-  max-width: 500px;
   margin: 30px auto;
-  overflow: auto;
   min-height: 300px;
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
+  background-color: rgb(23, 74, 99);
 }
 
 .day-container {
-  max-width: 500px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  flex: 1 1 auto;
   margin: 30px auto;
-  overflow: auto;
-  min-height: 300px;
+  min-height: 200px;
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
+  background-color: rgb(37, 124, 168);
+}
+
+.day {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  background-color: rgb(56, 183, 247);
+  min-height: 100px;
+  max-height: 100px;
+  min-width: 100px;
+  max-width: 100px;
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 10px;
+}
+
+.left {
+  width: 50%;
+  margin-top: auto;
+  border: 1px solid steelblue;
+}
+
+.bottom {
+  display: flex;
+  border: 1px solid steelblue;
+  font-size: 20px;
+  margin-top: auto;
+}
+
+.right {
+  margin-left: auto;
+  margin-top: auto;
+  border: 1px solid steelblue;
+}
+
+.weather {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid steelblue;
+  display: flex;
+}
+
+.date {
+  font-weight: bold;
+  font-size: 10px;
+  border: 1px solid steelblue;
 }
 
 .header {
@@ -35,7 +86,6 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  border: 1px solid steelblue;
 }
 
 .btn {
@@ -65,20 +115,12 @@ body {
   width: 100%;
 }
 
-.day {
-  background: #f4f4f4;
-  margin: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
 .task.reminder {
   border-left: 5px solid green;
 }
 
 .day h3 {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
