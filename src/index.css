@@ -14,7 +14,7 @@ body {
 .container {
   margin: 30px auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  border: 1px solid rgb(17, 58, 78);
   padding: 30px;
   border-radius: 5px;
   background-color: rgb(23, 74, 99);
@@ -28,7 +28,7 @@ body {
   flex: 1 1 auto;
   margin: 30px auto;
   min-height: 200px;
-  border: 1px solid steelblue;
+  border: 1px solid rgb(17, 58, 78);
   padding: 30px;
   border-radius: 5px;
   background-color: rgb(37, 124, 168);
@@ -44,41 +44,40 @@ body {
   min-width: 100px;
   max-width: 100px;
   margin: 5px;
-  padding: 10px 20px;
+  padding: 10px 5px;
   font-size: 10px;
+  border: 1px solid rgb(17, 58, 78);
 }
 
 .left {
   width: 50%;
   margin-top: auto;
-  border: 1px solid steelblue;
 }
 
 .bottom {
   display: flex;
-  border: 1px solid steelblue;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: auto;
 }
 
 .right {
   margin-left: auto;
   margin-top: auto;
-  border: 1px solid steelblue;
 }
 
 .weather {
   justify-content: center;
   align-items: center;
   width: 100%;
-  border: 1px solid steelblue;
   display: flex;
 }
 
 .date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: bold;
-  font-size: 10px;
-  border: 1px solid steelblue;
+  font-size: 14px;
 }
 
 .header {
@@ -86,6 +85,9 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  color: rgb(56, 183, 247);
+  -webkit-text-stroke: 0.5px black;
+  font-size: x-large;
 }
 
 .btn {

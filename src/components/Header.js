@@ -3,7 +3,7 @@ const Header = () => {
 
     return (
       <header className='header'>
-        <h1>Weather Forcast</h1>
+        <h1> 7 Day Weather Forcast</h1>
       </header>
     )
   }
