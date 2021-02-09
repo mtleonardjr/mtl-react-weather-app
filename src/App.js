@@ -13,6 +13,23 @@ function App() {
     return data
   }
 
+  // const [zip, setZip] = useState('')
+
+  // const onSubmit = (e) => {
+  //   e.preventDefault()
+
+  //   if (!text) {
+  //     alert('Please submit a zip code')
+  //     return
+  //   }
+
+  //   onAdd({ text, day, reminder })
+
+  //   setText('')
+  //   setDay('')
+  //   setReminder(false)
+  // }
+
   return (
     <div className="container">
       <Header />

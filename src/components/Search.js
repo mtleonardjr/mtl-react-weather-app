@@ -1,6 +1,7 @@
+import { useState } from 'react'
 
 const Search = () => {
-
+  const [zip, setZip] = useState('85016')
     return (
       <form className='search'>
         <label>Zip Code:</label>
