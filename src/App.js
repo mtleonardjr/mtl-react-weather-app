@@ -5,6 +5,15 @@ import Search from './components/Search'
 
 function App() {
 
+
+
+  const [zip, setZip] = useState('')
+  const [days, setDays] = useState('')
+
+  const searchZip = (zip) => {
+    console.log(zip)
+  }
+
   //get weather route
   const getWeather = async (zip) => {
     const res = await fetch('http://localhost:5000/' + zip)
@@ -13,22 +22,6 @@ function App() {
     return data
   }
 
-  // const [zip, setZip] = useState('')
-
-  // const onSubmit = (e) => {
-  //   e.preventDefault()
-
-  //   if (!text) {
-  //     alert('Please submit a zip code')
-  //     return
-  //   }
-
-  //   onAdd({ text, day, reminder })
-
-  //   setText('')
-  //   setDay('')
-  //   setReminder(false)
-  // }
 
   return (
     <div className="container">
@@ -37,7 +30,7 @@ function App() {
         <Days />  
       </div>
       <div className='search-container'>
-        <Search />
+        <Search onSearch={searchZip}/>
       </div>
 
     </div>
