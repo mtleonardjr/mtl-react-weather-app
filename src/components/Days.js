@@ -1,6 +1,4 @@
-import { useState } from 'react'
 import Day from './Day'
-
 
 const Days = ({ days }) => {
     return ( 

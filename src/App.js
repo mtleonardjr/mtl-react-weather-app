@@ -77,17 +77,101 @@ function App() {
         "wind10m_max": 3,
         "day": "Thursday"
     }
-])
+  ])
+  const [days2, setDays2] = useState([
+    {
+        "date": "Feb 5, 7777",
+        "weather": "clear",
+        "temp2m": {
+            "max": 20,
+            "min": 12
+        },
+        "wind10m_max": 3,
+        "day": "Friday"
+    },
+    {
+        "date": "Feb 6, 7777",
+        "weather": "clear",
+        "temp2m": {
+            "max": 21,
+            "min": 12
+        },
+        "wind10m_max": 2,
+        "day": "Saturday"
+    },
+    {
+        "date": "Feb 7, 7777",
+        "weather": "clear",
+        "temp2m": {
+            "max": 21,
+            "min": 14
+        },
+        "wind10m_max": 2,
+        "day": "Sunday"
+    },
+    {
+        "date": "Feb 8, 7777",
+        "weather": "mcloudy",
+        "temp2m": {
+            "max": 22,
+            "min": 14
+        },
+        "wind10m_max": 2,
+        "day": "Monday"
+    },
+    {
+        "date": "Feb 9, 7777",
+        "weather": "clear",
+        "temp2m": {
+            "max": 22,
+            "min": 15
+        },
+        "wind10m_max": 2,
+        "day": "Tuesday"
+    },
+    {
+        "date": "Feb 10, 7777",
+        "weather": "clear",
+        "temp2m": {
+            "max": 22,
+            "min": 15
+        },
+        "wind10m_max": 3,
+        "day": "Wednesday"
+    },
+    {
+        "date": "Feb 11, 7777",
+        "weather": "oshower",
+        "temp2m": {
+            "max": 18,
+            "min": 12
+        },
+        "wind10m_max": 3,
+        "day": "Thursday"
+    }
+  ])
 
-  const searchZip = (zip) => {
+  // useEffect(()=>{
+  //   const fetchdays
+  // })
+
+  const searchZip = async (zip) => {
     console.log(zip)
+    const weatherFromServer = await getWeather(zip)
+    console.log(weatherFromServer)
+    setDays(weatherFromServer.msg)
   }
 
   //get weather route
   const getWeather = async (zip) => {
-    const res = await fetch('http://localhost:5000/' + zip)
+    const res = await fetch('http://localhost:5003/weather', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(zip),
+    })
     const data = await res.json()
-
     return data
   }
 

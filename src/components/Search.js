@@ -9,10 +9,8 @@ const Search = ({ onSearch }) => {
       alert('Please enter a zip code')
       return
     }
-
     onSearch({ zip })
     setZip('')
-
   }
 
   return (
