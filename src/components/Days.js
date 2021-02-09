@@ -4,7 +4,7 @@ const Days = ({ days }) => {
     return ( 
       <>
         {days.map((day)=>(
-            <Day day={day} />
+            <Day day={day} key={day.date}/>
         ))}
       </>
     )
