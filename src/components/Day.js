@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { WiDaySunny } from 'weather-icons-react';
 import { WiCloudy } from 'weather-icons-react';
 import { WiHumidity } from 'weather-icons-react';
@@ -7,11 +6,6 @@ import { WiSnow } from 'weather-icons-react';
 import { WiThunderstorm } from 'weather-icons-react';
 
 const Day = ({ day }) => {
-
-    const [state, setState] = useState({
-        field :'text1'
-    })
-
     function Icon(props) {
         const weather = props.weather;
         if(weather == "clear") {
