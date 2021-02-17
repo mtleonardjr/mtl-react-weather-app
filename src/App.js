@@ -4,166 +4,16 @@ import Days from './components/Days'
 import Search from './components/Search'
 
 function App() {
+  const [days, setDays] = useState([])
 
-  const [zip, setZip] = useState('')
-  const [days, setDays] = useState([
-    {
-        "date": "Feb 5, 2021",
-        "weather": "clear",
-        "temp2m": {
-            "max": 20,
-            "min": 12
-        },
-        "wind10m_max": 3,
-        "day": "Friday"
-    },
-    {
-        "date": "Feb 6, 2021",
-        "weather": "clear",
-        "temp2m": {
-            "max": 21,
-            "min": 12
-        },
-        "wind10m_max": 2,
-        "day": "Saturday"
-    },
-    {
-        "date": "Feb 7, 2021",
-        "weather": "clear",
-        "temp2m": {
-            "max": 21,
-            "min": 14
-        },
-        "wind10m_max": 2,
-        "day": "Sunday"
-    },
-    {
-        "date": "Feb 8, 2021",
-        "weather": "mcloudy",
-        "temp2m": {
-            "max": 22,
-            "min": 14
-        },
-        "wind10m_max": 2,
-        "day": "Monday"
-    },
-    {
-        "date": "Feb 9, 2021",
-        "weather": "clear",
-        "temp2m": {
-            "max": 22,
-            "min": 15
-        },
-        "wind10m_max": 2,
-        "day": "Tuesday"
-    },
-    {
-        "date": "Feb 10, 2021",
-        "weather": "clear",
-        "temp2m": {
-            "max": 22,
-            "min": 15
-        },
-        "wind10m_max": 3,
-        "day": "Wednesday"
-    },
-    {
-        "date": "Feb 11, 2021",
-        "weather": "oshower",
-        "temp2m": {
-            "max": 18,
-            "min": 12
-        },
-        "wind10m_max": 3,
-        "day": "Thursday"
-    }
-  ])
-  const [days2, setDays2] = useState([
-    {
-        "date": "Feb 5, 7777",
-        "weather": "clear",
-        "temp2m": {
-            "max": 20,
-            "min": 12
-        },
-        "wind10m_max": 3,
-        "day": "Friday"
-    },
-    {
-        "date": "Feb 6, 7777",
-        "weather": "clear",
-        "temp2m": {
-            "max": 21,
-            "min": 12
-        },
-        "wind10m_max": 2,
-        "day": "Saturday"
-    },
-    {
-        "date": "Feb 7, 7777",
-        "weather": "clear",
-        "temp2m": {
-            "max": 21,
-            "min": 14
-        },
-        "wind10m_max": 2,
-        "day": "Sunday"
-    },
-    {
-        "date": "Feb 8, 7777",
-        "weather": "mcloudy",
-        "temp2m": {
-            "max": 22,
-            "min": 14
-        },
-        "wind10m_max": 2,
-        "day": "Monday"
-    },
-    {
-        "date": "Feb 9, 7777",
-        "weather": "clear",
-        "temp2m": {
-            "max": 22,
-            "min": 15
-        },
-        "wind10m_max": 2,
-        "day": "Tuesday"
-    },
-    {
-        "date": "Feb 10, 7777",
-        "weather": "clear",
-        "temp2m": {
-            "max": 22,
-            "min": 15
-        },
-        "wind10m_max": 3,
-        "day": "Wednesday"
-    },
-    {
-        "date": "Feb 11, 7777",
-        "weather": "oshower",
-        "temp2m": {
-            "max": 18,
-            "min": 12
-        },
-        "wind10m_max": 3,
-        "day": "Thursday"
-    }
-  ])
-
-  // useEffect(()=>{
-  //   const fetchdays
-  // })
-
-  const searchZip = async (zip) => {
-    console.log(zip)
-    const weatherFromServer = await getWeather(zip)
-    console.log(weatherFromServer)
-    setDays(weatherFromServer.msg)
-  }
+  //Runs "21218" on load
+  useEffect(()=>{
+    getWeather({zip: "21218"});
+  },[])
 
   //get weather route
   const getWeather = async (zip) => {
+    console.log(zip)
     const res = await fetch('http://localhost:5003/weather', {
       method: 'POST',
       headers: {
@@ -172,20 +22,28 @@ function App() {
       body: JSON.stringify(zip),
     })
     const data = await res.json()
-    return data
+    setDays(data.msg)
   }
 
-
   return (
-    <div className="container">
-      <Header />
-      <div className='day-container'>
-        <Days days={days}/>  
-      </div>
-      <div className='search-container'>
-        <Search onSearch={searchZip}/>
-      </div>
+    // <div className="container">
+    //   <Header />
+    //   <div className='day-container'>
+    //     <Days days={days}/>  
+    //   </div>
+    //   <div className='search-container'>
+    //     <Search onSearch={getWeather}/>
+    //   </div>
 
+    // </div>
+
+    //Second Front-end
+    <div className="app-container-2">
+        <div className="app-banner-2">Banner</div>
+        <div className="app-header-2">Header</div>
+        <div className="app-nav-2">Nav</div>
+        <div className="app-body-2">Body</div>
+        <div className="app-footer-2">Footer</div>
     </div>
   );
 }
