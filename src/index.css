@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
+@media screen and (max-width: 575px) {
+  .app-body-2 {
+    flex-direction: column;
+  }
+
+  .body-item {
+    height: 10px;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,14 +17,26 @@
   border: 1px solid black;
 }
 
-.app-container-2 {
-  height: 100vh;
+.app-body-2 {
+  border-color: red;
   display: flex;
-  flex-direction: column;
+  min-height: calc(100vh - 42vh);
 }
 
-.app-body-2 {
-  height: 100%;
+.app-footer-2,
+.app-banner-2 {
+  height: 20vh;
+}
+
+.app-footer-2 {
+  overflow-y: hidden;
+}
+
+.body-item {
+  flex: 0 0 20vw;
+}
+.body-main {
+  flex: 1;
 }
 
 /*

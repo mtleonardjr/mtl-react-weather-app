@@ -40,9 +40,11 @@ function App() {
     //Second Front-end
     <div className="app-container-2">
         <div className="app-banner-2">Banner</div>
-        <div className="app-header-2">Header</div>
-        <div className="app-nav-2">Nav</div>
-        <div className="app-body-2">Body</div>
+        <div className="app-body-2">
+            <div className='body-item'>body-item</div>
+            <div className='body-main'>body-item</div>
+            <div className='body-item'>body-item</div>
+        </div>
         <div className="app-footer-2">Footer</div>
     </div>
   );
