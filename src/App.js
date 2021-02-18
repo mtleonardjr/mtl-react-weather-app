@@ -26,27 +26,27 @@ function App() {
   }
 
   return (
-    // <div className="container">
-    //   <Header />
-    //   <div className='day-container'>
-    //     <Days days={days}/>  
-    //   </div>
-    //   <div className='search-container'>
-    //     <Search onSearch={getWeather}/>
-    //   </div>
+    <div className="container">
+      <Header />
+      <div className='day-container'>
+        <Days days={days}/>  
+      </div>
+      <div className='search-container'>
+        <Search onSearch={getWeather}/>
+      </div>
 
-    // </div>
+    </div>
 
     //Second Front-end
-    <div className="app-container-2">
-        <div className="app-banner-2">Banner</div>
-        <div className="app-body-2">
-            <div className='body-item'>body-item</div>
-            <div className='body-main'>body-item</div>
-            <div className='body-item'>body-item</div>
-        </div>
-        <div className="app-footer-2">Footer</div>
-    </div>
+    // <div className="app-container-2">
+    //     <div className="app-banner-2">Banner</div>
+    //     <div className="app-body-2">
+    //         <div className='body-item'>body-item</div>
+    //         <div className='body-main'>body-item</div>
+    //         <div className='body-item'>body-item</div>
+    //     </div>
+    //     <div className="app-footer-2">Footer</div>
+    // </div>
   );
 }
 
